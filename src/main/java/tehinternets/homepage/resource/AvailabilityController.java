@@ -1,24 +1,24 @@
 package tehinternets.homepage.resource;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@RequestMapping("/status")
 public class AvailabilityController {
-    @RequestMapping(value = "/index",method = RequestMethod.POST)
+
+    private static boolean avalable;
+
+    @GetMapping
     @ResponseBody
-    public ResponseEntity getStatus() {
-        return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
+    public void getStatus(HttpServletResponse stats) {
+        stats.setStatus(avalable ? stats.SC_OK : stats.SC_SERVICE_UNAVAILABLE);
     }
 
-    @PostMapping
-    public ResponseEntity setStatus(@PathVariable("url") String url) {
-        if(url == null) {
-            return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
-        } else {
-            return new ResponseEntity(HttpStatus.OK);
-        }
+    @PostMapping("/{value}")
+    @ResponseBody
+    public void setStatus(@PathVariable("value") boolean value) {
+        avalable = value;
     }
 }
