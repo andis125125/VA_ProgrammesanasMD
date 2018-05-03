@@ -13,6 +13,7 @@ public class AdvertesmentService {
         return new Advertesment(1L, "pardod valsti", "par 10000000000$", "Janka");
 
     }
+
     public ArrayList getAdList() {
         ArrayList<Advertesment> ads = new ArrayList<>();
         Advertesment ad = new Advertesment(1L, "pardod valsti", "par 10000000000$", "Janka");
@@ -25,7 +26,7 @@ public class AdvertesmentService {
         ArrayList<Advertesment> ad = new ArrayList<>();
         for (Advertesment ad1 : ads) {
             if (ad1.getAuthor().matches(searchQuery)) {
-                    ad.add(ad1);
+                ad.add(ad1);
             }
         }
         return ad;
