@@ -3,6 +3,7 @@ package tehinternets.homepage.service;
 import org.springframework.stereotype.Service;
 import tehinternets.homepage.domain.Advertesment;
 
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -20,14 +21,13 @@ public class AdvertesmentService {
         return ads;
     }
 
-    public Advertesment searchAdList(ArrayList<Advertesment> ads, String searchQuery) {
-        Advertesment ad = null;
+    public ArrayList<Advertesment> searchAdList(ArrayList<Advertesment> ads, String searchQuery) {
+        ArrayList<Advertesment> ad = new ArrayList<>();
         for (Advertesment ad1 : ads) {
             if (ad1.getAuthor().matches(searchQuery)) {
-                ad = ad1;
+                    ad.add(ad1);
             }
         }
-        
         return ad;
     }
 
