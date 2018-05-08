@@ -3,7 +3,6 @@ package tehinternets.homepage.service;
 import org.springframework.stereotype.Service;
 import tehinternets.homepage.domain.Advertesment;
 
-import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.Collections;
 
