@@ -1,6 +1,13 @@
 package tehinternets.homepage.domain;
 
+import javax.persistence.*;
+
+@Entity(name = "Advertisement")
+@Table(name = "advertisement")
 public class Advertesment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long ID;
     private String title;
     private String messange;
@@ -18,7 +25,6 @@ public class Advertesment {
     }
 
     public void setID(long ID) {
-
         this.ID = ID;
     }
 

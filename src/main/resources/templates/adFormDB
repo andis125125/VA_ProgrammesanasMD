@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="C:\Users\ASUS_i3_4_750\IdeaProjects\Java_projects\Homepage\src\main\resources\static.css\main.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sell your stuff</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"></a> Random</li>
+            <li><a href="#"></a> Music</li>
+            <li><a href="#"></a> Games</li>
+            <li><a href="#"></a> Flea market</li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="starter-template">
+        <form action="#" th:action="@{/ad}" th:object="@{/advertesment}" method="post">
+            <label>Title:</label>
+            <input type="text" th:field="*{title}"/>
+            <label>messange</label>
+            <input type="text" th:field="*{messange)"/>
+            <label>author</label>
+            <input type="text" th:field="*{author}"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

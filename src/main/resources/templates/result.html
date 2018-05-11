@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="C:\Users\ASUS_i3_4_750\IdeaProjects\Java_projects\Homepage\src\main\resources\static.css\main.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Sell your stuff</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"></a> Random</li>
+            <li><a href="#"></a> Music</li>
+            <li><a href="#"></a> Games</li>
+            <li><a href="#"></a> Flea market</li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="starter-template">
+        <p><span th:text="'Message: '+ ${message}"></span></p>
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Title</td>
+            </tr>
+            <tr>
+                <td>
+                    <p><span th:text="${advertesment.getID()}"></span></p>
+                </td>
+                <td>
+                    <p><span th:text="${advertesment.getTitle()}"></span></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

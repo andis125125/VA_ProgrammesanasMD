@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"><head>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Sell your stuff</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"></a> Random</li>
+                <li><a href="#"></a> Music</li>
+                <li><a href="#"></a> Games</li>
+                <li><a href="#"></a> Flea market</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="starter-template">
+            <p>Ads for sale</p>
+            <table>
+                <th:block th:each="advertesment : ${advertesmentList}">
+                <br />
+                    <td th:text="${advertesment.getID()}">...</td>
+                    <td th:text="${advertesment.getTitle()}">...</td>
+                    <td th:text="${advertesment.getMessange()}">...</td>
+                    <td th:text="${advertesment.getAuthor()}">...</td>
+                </th:block>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
